@@ -6,6 +6,6 @@ import lk.oneSound.Model.customer;
 
 public interface ICustomer {
 
-	public List<customer> validate(String username, String password);
+	List<customer> validate(String username, String password);
 	
 }

@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import lk.oneSound.Interface.ICustomer;
 import lk.oneSound.Model.customer;
 import lk.oneSound.dao.customerDao;
 
@@ -17,6 +18,7 @@ public class customerController {
 	HttpServletRequest request;
 	HttpServletResponse response;
 	RequestDispatcher dispatcher;
+	ICustomer iCustomer;
 	
 	public customerController() {
 		
@@ -34,7 +36,7 @@ public class customerController {
 		String password = request.getParameter("pass");
 		
 		try {
-		List<customer> userDetails = customerDao.validate(username, password);
+		List<customer> userDetails = iCustomer.validate(username, password);
 		request.setAttribute("userDetails", userDetails);
 		
 		}
