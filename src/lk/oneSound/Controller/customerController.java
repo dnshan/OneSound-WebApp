@@ -18,7 +18,7 @@ public class customerController {
 	HttpServletRequest request;
 	HttpServletResponse response;
 	RequestDispatcher dispatcher;
-	ICustomer iCustomer;
+//	ICustomer iCustomer;
 	
 	public customerController() {
 		
@@ -27,6 +27,7 @@ public class customerController {
 	public customerController(HttpServletRequest request, HttpServletResponse response) {
 		this.request = request;
 		this.response = response;
+//		this.iCustomer = iCustomer;
 		this.dispatcher = request.getRequestDispatcher("loggedHome.jsp");
 	}
 	
@@ -36,7 +37,7 @@ public class customerController {
 		String password = request.getParameter("pass");
 		
 		try {
-		List<customer> userDetails = iCustomer.validate(username, password);
+		List<customer> userDetails = new customerDao().validate(username, password);
 		request.setAttribute("userDetails", userDetails);
 		
 		}
