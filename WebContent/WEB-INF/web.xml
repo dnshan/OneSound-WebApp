@@ -19,4 +19,15 @@
   	<url-pattern>/log</url-pattern>
   </servlet-mapping>
   
+  
+  <servlet>
+  	<servlet-name>SignUp</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.CustomerSignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>login</servlet-name>
+  	<url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
