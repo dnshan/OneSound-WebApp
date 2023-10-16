@@ -2,8 +2,10 @@ package lk.oneSound.dao;
 
 import java.sql.Connection;
 import java.sql.Statement;
+import java.util.List;
 
 import lk.oneSound.Interface.ICustomer;
+import lk.oneSound.Model.customer;
 import lk.oneSound.Utility.DBConnection;
 
 
@@ -11,7 +13,7 @@ import lk.oneSound.Utility.DBConnection;
 public class CustomerSignUpdao implements ICustomer {
 	
 	
-public boolean insertCustomer(String firstname, String lastname, String email, String username, String password) {
+public  boolean insertCustomer(String firstname, String lastname, String email, String username, String password) {
 		
 		boolean isSuccess = false;
 			
@@ -46,6 +48,12 @@ public boolean insertCustomer(String firstname, String lastname, String email, S
 		return isSuccess;
 		
 		
+	}
+
+	@Override
+	public List<customer> validate(String username, String password) {
+	// TODO Auto-generated method stub
+	return null;
 	}
 	
 	

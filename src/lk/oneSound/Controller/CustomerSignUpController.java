@@ -44,7 +44,9 @@ public class CustomerSignUpController {
 		
 		boolean isTrue;
 		
-		isTrue = CustomerSignUpdao.insertCustomer(FirstName, LastName, email, username, password);
+		 CustomerSignUpdao dao = new CustomerSignUpdao();
+		
+		isTrue = dao.insertCustomer(FirstName, LastName, email, username, password);
 		
 		if(isTrue == true) {
 			
@@ -59,6 +61,8 @@ public class CustomerSignUpController {
 			dis2.forward(request, response);
 			
 		}
+		
+		return isTrue;
 		
 	}
 	
