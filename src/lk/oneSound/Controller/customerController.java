@@ -36,6 +36,8 @@ public class customerController {
 		String username = request.getParameter("uid");
 		String password = request.getParameter("pass");
 		
+		
+		
 		try {
 		List<customer> userDetails = new customerDao().validate(username, password);
 		request.setAttribute("userDetails", userDetails);

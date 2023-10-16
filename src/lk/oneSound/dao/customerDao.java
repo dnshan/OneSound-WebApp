@@ -28,7 +28,7 @@ public class customerDao implements ICustomer {
 				
 				int id = result.getInt(1);
 				String firstname = result.getString(2);
-				String lastname = result.getNString(3);
+				String lastname = result.getString(3);
 				String email = result.getString(4);
 				String usernameU = result.getString(5);
 				String passwordU = result.getString(6);
@@ -50,6 +50,43 @@ public class customerDao implements ICustomer {
 		}
 		
 		return user;
+	}
+
+	public  boolean insertCustomer(String firstname, String lastname, String email, String username, String password) {
+		
+		boolean isSuccess = false;
+			
+		try {
+			
+			
+			Connection con = DBConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "INSERT INTO user VALUES (0, '"+firstname+"', '"+lastname+"', '"+email+"', '"+username+"', '"+password+"') ";
+			int result = stmt.executeUpdate(sql);
+			
+			
+			if(result > 0) {
+				
+				isSuccess = true;	
+			}
+			
+			else {
+				isSuccess = false;
+				
+			}
+			
+			
+			
+		}
+		
+		catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+		
+		
 	}
 
 }

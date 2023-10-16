@@ -44,7 +44,7 @@ public class CustomerSignUpController {
 		
 		boolean isTrue;
 		
-		 CustomerSignUpdao dao = new CustomerSignUpdao();
+		 customerDao dao = new customerDao();
 		
 		isTrue = dao.insertCustomer(FirstName, LastName, email, username, password);
 		
