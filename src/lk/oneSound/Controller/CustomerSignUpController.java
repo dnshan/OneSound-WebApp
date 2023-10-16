@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-import lk.oneSound.Model.customer;
-import lk.oneSound.dao.CustomerSignUpdao;
 import lk.oneSound.dao.customerDao;
 
 public class CustomerSignUpController {

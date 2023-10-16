@@ -1,6 +1,7 @@
 package lk.oneSound.Controller;
 
 import java.io.IOException;
+
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -8,7 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lk.oneSound.Interface.ICustomer;
 import lk.oneSound.Model.customer;
 import lk.oneSound.dao.customerDao;
 

@@ -51,6 +51,8 @@ public class customerDao implements ICustomer {
 		
 		return user;
 	}
+	
+	//Insert Customer
 
 	public  boolean insertCustomer(String firstname, String lastname, String email, String username, String password) {
 		
