@@ -138,7 +138,7 @@
                         <h3>Welcome Back</h3>
                         <!-- Login Form -->
                         <div class="login-form">
-                            <form action="log" method="post">
+                            <form action="log" method="get">
                                 <div class="form-group">
                                     <label for="firstname">Username</label>
                                     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Username" name = "uid">

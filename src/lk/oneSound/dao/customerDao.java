@@ -9,9 +9,11 @@ import java.util.List;
 import lk.oneSound.Interface.ICustomer;
 import lk.oneSound.Model.customer;
 import lk.oneSound.Utility.DBConnection;
+import lk.oneSound.Utility.DBConnectionMSSQL;
 
 public class customerDao implements ICustomer {
 	
+	@SuppressWarnings("unused")
 	public List<customer> validate(String username, String password){
 		
 		ArrayList<customer> user = new ArrayList<>();
@@ -19,9 +21,9 @@ public class customerDao implements ICustomer {
 		//validate
 		try {
 			
-			Connection con = DBConnection.getConnection();
+			Connection con = DBConnectionMSSQL.getConnection();
 			Statement stmt = con.createStatement();
-			String sql = "SELECT * FROM user WHERE Username = '"+username+"' AND Password = '"+password+"'";
+			String sql = "SELECT * FROM users WHERE Username = '"+username+"' AND Password = '"+password+"'";
 			ResultSet result = stmt.executeQuery(sql);
 			
 			if(result.next()) {
@@ -49,7 +51,16 @@ public class customerDao implements ICustomer {
 				
 		}
 		
-		return user;
+		if (user != null) {
+			return user;
+		} else {
+			return null;
+		}
+		
+	}
+	
+	public boolean insertCustomer(String firstname, String lastname, String email, String username, String password) {
+		return false;
 	}
 
 }

@@ -18,6 +18,7 @@ public class customerController {
 	HttpServletRequest request;
 	HttpServletResponse response;
 	RequestDispatcher dispatcher;
+	
 //	ICustomer iCustomer;
 	
 	public customerController() {
@@ -36,8 +37,10 @@ public class customerController {
 		String username = request.getParameter("uid");
 		String password = request.getParameter("pass");
 		
+		List<customer> userDetails = null;
+		
 		try {
-		List<customer> userDetails = new customerDao().validate(username, password);
+		userDetails = new customerDao().validate(username, password);
 		request.setAttribute("userDetails", userDetails);
 		
 		}
@@ -47,8 +50,10 @@ public class customerController {
 			
 		}
 		
-		dispatcher.forward(request, response);
-		
+		System.out.println("userDetails" + userDetails);
+		if (userDetails != null) {
+			dispatcher.forward(request, response);
+		}
 	}
 	
 
