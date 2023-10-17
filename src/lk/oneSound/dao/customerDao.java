@@ -13,12 +13,7 @@ import lk.oneSound.Utility.DBConnectionMSSQL;
 
 public class customerDao implements ICustomer {
 	
-<<<<<<< HEAD
-	@SuppressWarnings("unused")
-=======
-	@Override
-	
->>>>>>> a1ad5432ca815fa30a1e3533f51c7ca854febbc6
+
 	public List<customer> validate(String username, String password){
 		
 		ArrayList<customer> user = new ArrayList<>();
