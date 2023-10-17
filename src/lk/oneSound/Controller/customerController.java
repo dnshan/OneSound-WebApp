@@ -41,13 +41,13 @@ public class customerController {
 		
 		try {
 		List<customer> userDetails = new customerDao().validate(username, password);
-		request.setAttribute("userDetails", userDetails);
+		//request.setAttribute("userDetails", userDetails);
 		
 		
 		if (userDetails != null && !userDetails.isEmpty()) {
             // User is authenticated
             request.setAttribute("userDetails", userDetails);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("loggedHome.jsp"); // Forward to the user's home page
+            RequestDispatcher dispatcher = request.getRequestDispatcher("userAccount.jsp"); // Forward to the user's home page
             dispatcher.forward(request, response);
         
 		
