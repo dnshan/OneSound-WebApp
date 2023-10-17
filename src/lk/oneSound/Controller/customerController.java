@@ -19,7 +19,6 @@ public class customerController {
 	HttpServletRequest request;
 	HttpServletResponse response;
 	RequestDispatcher dispatcher;
-	
 //	ICustomer iCustomer;
 	
 	public customerController() {
@@ -38,13 +37,6 @@ public class customerController {
 		String username = request.getParameter("uid");
 		String password = request.getParameter("pass");
 		
-<<<<<<< HEAD
-		List<customer> userDetails = null;
-		
-		try {
-		userDetails = new customerDao().validate(username, password);
-		request.setAttribute("userDetails", userDetails);
-=======
 		
 		
 		try {
@@ -66,7 +58,6 @@ public class customerController {
             dispatcher.forward(request, response);
         }
 		
->>>>>>> a1ad5432ca815fa30a1e3533f51c7ca854febbc6
 		
 		}
 		
@@ -75,15 +66,8 @@ public class customerController {
 			
 		}
 		
-<<<<<<< HEAD
-		System.out.println("userDetails" + userDetails);
-		if (userDetails != null) {
-			dispatcher.forward(request, response);
-		}
-=======
 		//dispatcher.forward(request, response);
 		
->>>>>>> a1ad5432ca815fa30a1e3533f51c7ca854febbc6
 	}
 	
 
