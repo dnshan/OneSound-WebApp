@@ -140,26 +140,26 @@
                             <form action="signup" method="post">
                                 <div class="form-group">
                                     <label for="firstname">First Name</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex : Dasuni" name = "firstname">
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex : Dasuni" name = "firstname" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="firstname">Last Name</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex : Premasinghe" name = "lastname">
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex : Premasinghe" name = "lastname" required>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail" name = "email">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-mail" name = "email" required>
                                     <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="firstname">Username</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name = "uid">
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name = "uid" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name = "pass">
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name = "pass" required>
                                 </div>
                                 <!--  <div class="form-group">
                                     <label for="exampleInputPassword1">Confirm Password</label>

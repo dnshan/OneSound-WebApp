@@ -1,16 +1,16 @@
 package lk.oneSound.Model;
 
 public class Customer {
-	
+
 	private int uid;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String username;
 	private String password;
-	
+
 	public Customer(int uid, String firstName, String lastName, String email, String username, String password) {
-		
+
 		this.uid = uid;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -26,6 +26,7 @@ public class Customer {
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
@@ -34,7 +35,6 @@ public class Customer {
 		return email;
 	}
 
-
 	public String getUsername() {
 		return username;
 	}
@@ -42,7 +42,5 @@ public class Customer {
 	public String getPassword() {
 		return password;
 	}
-
-	
 
 }
