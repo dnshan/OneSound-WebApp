@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+encoding//WebContent/EditProfile.jsp=UTF-8
+encoding//WebContent/SongDetails.jsp=UTF-8
+encoding//WebContent/loggedHome.jsp=UTF-8
+encoding//WebContent/userAccount.jsp=UTF-8
 encoding/<project>=UTF-8

@@ -2,7 +2,8 @@ package lk.oneSound.Controller;
 
 import java.io.IOException;
 
-
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,29 +11,34 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lk.oneSound.Model.customer;
+import lk.oneSound.Model.Customer;
 import lk.oneSound.dao.customerDao;
 
 
-public class customerController {
+public class CustomerController {
 	
 	HttpServletRequest request;
 	HttpServletResponse response;
 	RequestDispatcher dispatcher;
+	customerDao dao;
 //	ICustomer iCustomer;
 	
-	public customerController() {
+	public CustomerController() {
 		
 	}
 	
-	public customerController(HttpServletRequest request, HttpServletResponse response) {
+	public CustomerController(HttpServletRequest request, HttpServletResponse response) {
 		this.request = request;
 		this.response = response;
+		this.dao = new customerDao();
 //		this.iCustomer = iCustomer;
 		//this.dispatcher = request.getRequestDispatcher("loggedHome.jsp");
 	}
 	
 	public void validate() throws ServletException, IOException {
+		
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
 
 		String username = request.getParameter("uid");
 		String password = request.getParameter("pass");
@@ -40,19 +46,25 @@ public class customerController {
 		
 		
 		try {
-		List<customer> userDetails = new customerDao().validate(username, password);
+		ArrayList<Customer> userDetails = dao.validate(username, password);
 		//request.setAttribute("userDetails", userDetails);
 		
 		
 		if (userDetails != null && !userDetails.isEmpty()) {
             // User is authenticated
             request.setAttribute("userDetails", userDetails);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("userAccount.jsp"); // Forward to the user's home page
+            RequestDispatcher dispatcher = request.getRequestDispatcher("userAccount.jsp");
+            // Forward to the user's home page
             dispatcher.forward(request, response);
         
 		
 		} else {
             // Authentication failed
+			//out.println("<script type='text/javascript'>");
+			//out.println("alert('Your username or password is incorrect');");
+			//out.println("location='Login.jsp'");
+			//out.println("</script>");
+			
             RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp"); // Forward to the login page with an error message
             request.setAttribute("loginError", "Invalid username or password.");
             dispatcher.forward(request, response);

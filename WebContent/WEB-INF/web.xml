@@ -12,7 +12,7 @@
   
   <servlet>
   	<servlet-name>login</servlet-name>
-  	<servlet-class>lk.oneSound.Servlet.customerServlet</servlet-class>
+  	<servlet-class>lk.oneSound.Servlet.CustomerServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>login</servlet-name>

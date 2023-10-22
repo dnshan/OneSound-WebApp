@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +60,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="loggedHome.html">Home</a></li>
+                                    <li><a href="loggedHome.jsp">Home</a></li>
                                     <li><a href="albums-store.html">Albums</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="#">Profile</a>
@@ -273,38 +271,7 @@
 
     <!-- ##### Buy Now Area Start ##### -->
     <section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100" style="background-color:aliceblue;">
-<!--        <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label> -->
-			<table>
-
-	<c:forEach var="userDetail" items="${userDetails}">
-	
-	<tr>
-	<td>User ID : </td>
-	<td>${userDetail.getuid()}</td>
-	</tr>
-	<tr>
-	<td>First Name :</td>
-	<td>${userDetail.getFirstName()}</td>
-	</tr>
-	
-	<tr>
-	<td>Last Name :</td>
-	<td>${userDetail.getLastName()}</td>
-	</tr>
-	
-	<tr>
-	<td>Email:</td>
-	<td>${userDetail.getEmail()}</td>
-	</tr>
-	
-	<tr>
-	<td>Username :</td>
-	<td>${userDetail.getUsername()}</td>
-	</tr>
-	
-	</c:forEach>
-</table>
-			
+        <!-- <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label> -->
         <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -535,7 +502,7 @@
     <!-- ##### Buy Now Area End ##### -->
 
     <!-- ##### Featured Artist Area Start ##### -->
-    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-4.jpg);">
+    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/blog3.jpg);">
         <!-- <div class="container">
             <div class="row align-items-end">
                 <div class="col-12 col-md-5 col-lg-4">

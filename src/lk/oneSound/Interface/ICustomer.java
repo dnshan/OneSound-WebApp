@@ -1,13 +1,13 @@
 package lk.oneSound.Interface;
 
-import java.util.List;
+import java.util.ArrayList;
 
 
-import lk.oneSound.Model.customer;
+import lk.oneSound.Model.Customer;
 
 public interface ICustomer {
 
-	List<customer> validate(String username, String password);
+	ArrayList<Customer> validate(String username, String password);
 	boolean insertCustomer(String firstname, String lastname, String email, String username, String password);
 	
 }

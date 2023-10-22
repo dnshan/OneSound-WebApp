@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lk.oneSound.Interface.ICustomer;
-import lk.oneSound.Model.customer;
+import lk.oneSound.Model.Customer;
 import lk.oneSound.Utility.DBConnection;
 
 public class customerDao implements ICustomer {
 	
 	@Override
 	
-	public List<customer> validate(String username, String password){
+	public ArrayList<Customer> validate(String username, String password){
 		
-		ArrayList<customer> user = new ArrayList<>();
+		ArrayList<Customer> user = new ArrayList<>();
 		
 		//validate
 		try {
@@ -36,7 +36,7 @@ public class customerDao implements ICustomer {
 				String passwordU = result.getString(6);
 				//String userRole = result.getString(7);
 				
-				customer u = new customer(id, firstname, lastname, email, usernameU, passwordU);
+				Customer u = new Customer(id, firstname, lastname, email, usernameU, passwordU);
 				
 				user.add(u);
 				

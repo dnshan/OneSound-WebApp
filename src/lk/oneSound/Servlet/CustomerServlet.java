@@ -9,23 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lk.oneSound.Controller.customerController;
+import lk.oneSound.Controller.CustomerController;
 
 /**
  * Servlet implementation class customerServlet
  * 
  */
-@WebServlet("/customerServlet")
-public final class customerServlet extends HttpServlet {
+@WebServlet("/CustomerServlet")
+public final class CustomerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private customerController controller;
+	private CustomerController controller;
 //	ICustomer iCustomer;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public customerServlet() {       
+    public CustomerServlet() {       
     }
 
 	/**
@@ -34,7 +34,7 @@ public final class customerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		this.controller = new customerController(request, response);
+		this.controller = new CustomerController(request, response);
 		this.controller.validate();
 	}
 

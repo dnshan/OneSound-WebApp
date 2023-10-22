@@ -64,16 +64,18 @@
                                 <ul>
                                     <li><a href="loggedHome.html">Home</a></li>
                                     <li><a href="albums-store.html">Albums</a></li>
-                                    <!-- <li><a href="#">Pages</a>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#">Profile</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="albums-store.html">Albums</a></li>
-                                            <li><a href="event.html">Events</a></li>
-                                            <li><a href="blog.html">News</a></li>
+                                            <li><a href="userAccount.jsp">Overview</a></li>
+                                            <li><a href="EditProfile.jsp">Edit Profile</a></li>
+                                            <li><a href="SongDetails.jsp">Songs Details</a></li>
+                                            <!-- <li><a href="blog.html">News</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="elements.html">Elements</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="#">Dropdown</a>
+                                            <li><a href="login.html">Login</a></li> -->
+                                            
+                                            <!-- <li><a href="#">Dropdown</a>
                                                 <ul class="dropdown">
                                                     <li><a href="#">Even Dropdown</a></li>
                                                     <li><a href="#">Even Dropdown</a></li>
@@ -88,13 +90,13 @@
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Even Dropdown</a></li>
-                                                </ul>
+                                                </ul> -->
                                             </li>
                                         </ul>
-                                    </li> -->
+                                    </li> 
                                     <!-- <li><a href="event.html">Events</a></li>
                                     <li><a href="blog.html">News</a></li> -->
-                                    <li><a href="contact.html">Contact</a></li>
+                                   
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
@@ -893,5 +895,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </body>
 
 </html>
- 
  
