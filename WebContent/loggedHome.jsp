@@ -62,7 +62,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="loggedHome.html">Home</a></li>
+                                    <li><a href="loggedHome.jsp">Home</a></li>
                                     <li><a href="albums-store.html">Albums</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="#">Profile</a>
