@@ -272,6 +272,56 @@
     <!-- ##### Buy Now Area Start ##### -->
     <section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100" style="background-color:aliceblue;">
         <!-- <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label> -->
+       <%
+      		String userid = request.getParameter("userid");
+       		String firstname = request.getParameter("firstname");
+       		String lastname = request.getParameter("lastname");
+       		String email = request.getParameter("email");
+       		String username = request.getParameter("username");
+       		
+       		
+       %>
+       
+       
+       
+        <div class="login-form">
+                            <form action="update" method="post">
+                            
+                            	<div class="form-group">
+                                    <label for="firstname">User Id</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "userid1" value = "<%= userid%>" readonly>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "firstname1" value = "<%= firstname%>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname">Last Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "lastname1" value = "<%= lastname%>">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name = "email1" value = "<%= email%>">
+                                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname">Username</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "uid1" value = "<%= username%>">
+                                </div>
+                                
+                                <!--  <div class="form-group">
+                                    <label for="exampleInputPassword1">Confirm Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Re-enter Password">
+                                </div> -->
+
+                                
+
+                                <button type="submit" class="btn oneMusic-btn mt-30" name ="submit">Update</button>
+                            </form>
+                        </div>
         <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-12">

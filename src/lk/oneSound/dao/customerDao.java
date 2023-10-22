@@ -88,5 +88,87 @@ public class customerDao implements ICustomer {
 		return isSuccess;
 
 	}
+	
+	//Update Customer
+	public boolean UpdateCustomer(String id, String firstname, String lastname, String email, String username) {
+		boolean isSuccess = false;
+		
+		try {
+			
+			Connection con = DBConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "UPDATE user SET FirstName = '"+firstname+"', LastName = '"+lastname+"', Email = '"+email+"', Username = '"+username+"' WHERE UserId = '"+id+"' ";
+			int result = stmt.executeUpdate(sql);
 
+			if (result > 0) {
+
+				isSuccess = true;
+			}
+
+			else {
+				isSuccess = false;
+
+			}
+			
+			
+			
+			
+		}
+		
+		catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+		return isSuccess;
+	}
+	
+	//Retrieve Details
+	
+	public List<Customer> getCustomerDetails(String id){
+		
+		int intId = Integer.parseInt(id);
+		
+		ArrayList<Customer> customer = new ArrayList<>();
+		
+		try {
+
+			Connection con = DBConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "SELECT * FROM user WHERE UserId = '"+intId+"'";
+			ResultSet result = stmt.executeQuery(sql);
+			
+			while(result.next()) {
+				
+				int uid = result.getInt(1);
+				String fname = result.getString(2);
+				String lname = result.getString(3);
+				String email = result.getString(4);
+				String uname = result.getString(5);
+				String pass = result.getString(6);
+				
+				Customer cus = new Customer(uid,fname,lname,email,uname,pass);
+				
+				customer.add(cus);
+				
+				
+			}
+			
+			
+			
+		}
+		
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return customer;
+		
+		
+		
+	}
+	
+
+	
 }

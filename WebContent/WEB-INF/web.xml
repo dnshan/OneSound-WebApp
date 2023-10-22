@@ -29,5 +29,14 @@
   	<url-pattern>/signup</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>UpdateCustomer</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.UpdateCustomerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateCustomer</servlet-name>
+  	<url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  
   
 </web-app>
