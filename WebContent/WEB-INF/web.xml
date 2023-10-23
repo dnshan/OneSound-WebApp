@@ -38,5 +38,14 @@
   	<url-pattern>/update</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>DeleteCustomer</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.DeleteCustomerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeleteCustomer</servlet-name>
+  	<url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  
   
 </web-app>

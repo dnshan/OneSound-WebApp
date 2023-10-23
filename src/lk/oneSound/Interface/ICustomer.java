@@ -11,5 +11,6 @@ public interface ICustomer {
 	boolean insertCustomer(String firstname, String lastname, String email, String username, String password);
 	boolean UpdateCustomer(String id, String firstname, String lastname, String email, String username);
 	List<Customer> getCustomerDetails(String id);
+	boolean DeleteCustomer(String id);
 	
 }

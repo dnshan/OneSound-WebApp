@@ -169,6 +169,44 @@ public class customerDao implements ICustomer {
 		
 	}
 	
+	
+	public boolean DeleteCustomer(String id) {
+		
+		boolean isSuccess = false;
+		
+		int intId = Integer.parseInt(id);
+		
+		try {
+			
+			Connection con = DBConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "DELETE FROM user WHERE UserId = '"+intId+"'";
+			int result = stmt.executeUpdate(sql);
+			
+			if(result > 0) {
+
+				isSuccess = true;
+			}
+
+			else {
+				isSuccess = false;
+
+			}
+			
+			
+			
+			
+			
+		}
+		catch(Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+		
+	}
+	
 
 	
 }

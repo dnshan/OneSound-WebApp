@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -273,72 +272,58 @@
 
     <!-- ##### Buy Now Area Start ##### -->
     <section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100" style="background-color:aliceblue;">
-<!--        <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label> -->
-			<table>
+        <!-- <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label> -->
+       <%
+      		String userid = request.getParameter("userid");
+       		String firstname = request.getParameter("firstname");
+       		String lastname = request.getParameter("lastname");
+       		String email = request.getParameter("email");
+       		String username = request.getParameter("username");
+       		
+       		
+       %>
+       
+       
+       
+        <div class="login-form">
+        <h2>Delete Account</h2>
+                            <form action="delete" method="post">
+                            
+                            	<div class="form-group">
+                                    <label for="firstname">User Id</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "userid2" value = "<%= userid%>" readonly>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "firstname2" value = "<%= firstname%>" readonly>
+                                </div>
 
-	<c:forEach var="userDetail" items="${userDetails}">
-	
-	<c:set  var = "userid" value = "${userDetail.getuid()}"/>
-	<c:set  var = "firstname" value = "${userDetail.getFirstName()}"/>
-	<c:set  var = "lastname" value = "${userDetail.getLastName()}"/>
-	<c:set  var = "email" value = "${userDetail.getEmail()}"/>
-	<c:set  var = "username" value = "${userDetail.getUsername()}"/>
-	
-	<tr>
-	<td>User ID : </td>
-	<td>${userDetail.getuid()}</td>
-	</tr>
-	<tr>
-	<td>First Name :</td>
-	<td>${userDetail.getFirstName()}</td>
-	</tr>
-	
-	<tr>
-	<td>Last Name :</td>
-	<td>${userDetail.getLastName()}</td>
-	</tr>
-	
-	<tr>
-	<td>Email:</td>
-	<td>${userDetail.getEmail()}</td>
-	</tr>
-	
-	<tr>
-	<td>Username :</td>
-	<td>${userDetail.getUsername()}</td>
-	</tr>
-	
-	</c:forEach>
-</table>
+                                <div class="form-group">
+                                    <label for="firstname">Last Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "lastname2" value = "<%= lastname%>" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name = "email2" value = "<%= email%>" readonly>
+                                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname">Username</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "uid2" value = "<%= username%>" readonly>
+                                </div>
+                                
+                                <!--  <div class="form-group">
+                                    <label for="exampleInputPassword1">Confirm Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Re-enter Password">
+                                </div> -->
 
-	<c:url value = "EditProfile.jsp" var = "cusupdate">
-		<c:param name = "userid" value = "${userid}"/>
-		<c:param name = "firstname" value = "${firstname}"/>
-		<c:param name = "lastname" value = "${lastname}"/>
-		<c:param name = "email" value = "${email}"/>
-		<c:param name = "username" value = "${username}"/>
-	
-	
-	</c:url>
-		<a href = "${cusupdate}">
-      <button type="submit" class="btn oneMusic-btn mt-30" name ="update">Update Account</button>
-		</a>	
-		
-		
-		<c:url value = "DeleteCustomer.jsp" var = "cusdelete">
-		
-		<c:param name = "userid" value = "${userid}"/>
-		<c:param name = "firstname" value = "${firstname}"/>
-		<c:param name = "lastname" value = "${lastname}"/>
-		<c:param name = "email" value = "${email}"/>
-		<c:param name = "username" value = "${username}"/>
-	
-	
-	</c:url>
-		
-		<a href = "${cusdelete}">
-		<button type="submit" class="btn oneMusic-btn mt-30" name ="delete">Delete Account</button>
-		</a>
+                                
+
+                                <button type="submit" class="btn oneMusic-btn mt-30" name ="delete">Delete</button>
+                            </form>
+                        </div>
         <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -569,7 +554,7 @@
     <!-- ##### Buy Now Area End ##### -->
 
     <!-- ##### Featured Artist Area Start ##### -->
-    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-4.jpg);">
+    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/blog2.jpg);">
         <!-- <div class="container">
             <div class="row align-items-end">
                 <div class="col-12 col-md-5 col-lg-4">
