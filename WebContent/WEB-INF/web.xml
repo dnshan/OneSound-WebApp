@@ -29,4 +29,23 @@
   	<url-pattern>/signup</url-pattern>
   </servlet-mapping>
   
+  	  	 <servlet>
+  	<servlet-name>AddSong</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.ArtistAddSongServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddSong</servlet-name>
+  	<url-pattern>/AddSong</url-pattern>
+  </servlet-mapping>
+  
+  
+  		<servlet>
+    <servlet-name>ReadSong</servlet-name>
+    <servlet-class>lk.oneSound.Servlet.ArtistReadSongServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ReadSong</servlet-name>
+    <url-pattern>/ReadSong</url-pattern>
+</servlet-mapping>
+  
 </web-app>
