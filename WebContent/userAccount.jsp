@@ -278,6 +278,12 @@
 
 	<c:forEach var="userDetail" items="${userDetails}">
 	
+	<c:set  var = "userid" value = "${userDetail.getuid()}"/>
+	<c:set  var = "firstname" value = "${userDetail.getFirstName()}"/>
+	<c:set  var = "lastname" value = "${userDetail.getLastName()}"/>
+	<c:set  var = "email" value = "${userDetail.getEmail()}"/>
+	<c:set  var = "username" value = "${userDetail.getUsername()}"/>
+	
 	<tr>
 	<td>User ID : </td>
 	<td>${userDetail.getuid()}</td>
@@ -304,7 +310,35 @@
 	
 	</c:forEach>
 </table>
-			
+
+	<c:url value = "EditProfile.jsp" var = "cusupdate">
+		<c:param name = "userid" value = "${userid}"/>
+		<c:param name = "firstname" value = "${firstname}"/>
+		<c:param name = "lastname" value = "${lastname}"/>
+		<c:param name = "email" value = "${email}"/>
+		<c:param name = "username" value = "${username}"/>
+	
+	
+	</c:url>
+		<a href = "${cusupdate}">
+      <button type="submit" class="btn oneMusic-btn mt-30" name ="update">Update Account</button>
+		</a>	
+		
+		
+		<c:url value = "DeleteCustomer.jsp" var = "cusdelete">
+		
+		<c:param name = "userid" value = "${userid}"/>
+		<c:param name = "firstname" value = "${firstname}"/>
+		<c:param name = "lastname" value = "${lastname}"/>
+		<c:param name = "email" value = "${email}"/>
+		<c:param name = "username" value = "${username}"/>
+	
+	
+	</c:url>
+		
+		<a href = "${cusdelete}">
+		<button type="submit" class="btn oneMusic-btn mt-30" name ="delete">Delete Account</button>
+		</a>
         <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-12">

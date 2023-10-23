@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -285,31 +286,32 @@
        
        
         <div class="login-form">
-                            <form action="update" method="post">
+        <h2>Delete Account</h2>
+                            <form action="delete" method="post">
                             
                             	<div class="form-group">
                                     <label for="firstname">User Id</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "userid1" value = "<%= userid%>" readonly>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "userid2" value = "<%= userid%>" readonly>
                                 </div>
                             
                                 <div class="form-group">
                                     <label for="firstname">First Name</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "firstname1" value = "<%= firstname%>">
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "firstname2" value = "<%= firstname%>" readonly>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="firstname">Last Name</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "lastname1" value = "<%= lastname%>">
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "lastname2" value = "<%= lastname%>" readonly>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name = "email1" value = "<%= email%>">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name = "email2" value = "<%= email%>" readonly>
                                     <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="firstname">Username</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "uid1" value = "<%= username%>">
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "uid2" value = "<%= username%>" readonly>
                                 </div>
                                 
                                 <!--  <div class="form-group">
@@ -319,7 +321,7 @@
 
                                 
 
-                                <button type="submit" class="btn oneMusic-btn mt-30" name ="submit">Update</button>
+                                <button type="submit" class="btn oneMusic-btn mt-30" name ="delete">Delete</button>
                             </form>
                         </div>
         <!-- <div class="container-fluid">

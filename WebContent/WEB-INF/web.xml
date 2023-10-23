@@ -28,5 +28,5 @@
   	<servlet-name>SignUp</servlet-name>
   	<url-pattern>/signup</url-pattern>
   </servlet-mapping>
-    
+  
 </web-app>
