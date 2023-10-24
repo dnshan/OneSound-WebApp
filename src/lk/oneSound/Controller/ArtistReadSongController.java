@@ -26,7 +26,7 @@ public class ArtistReadSongController {
         // Forward the request to the JSP page where you want to display the songs
         // For example, assuming your JSP page is named "songs.jsp"
         try {
-            request.getRequestDispatcher("Songs.jsp").forward(request, response);
+            request.getRequestDispatcher("SongDetails.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace(); // Handle the exception properly (log it, throw a custom exception, etc.)
         }
