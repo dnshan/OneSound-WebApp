@@ -32,7 +32,7 @@ public class ArtistAddSongController {
 		this.dispatcher = request.getRequestDispatcher("SongDetails.jsp");
 	}
 	
-	public boolean addSong() throws ServletException, IOException {
+	public void addSong() throws ServletException, IOException {
 
 		int AId =Integer.parseInt(request.getParameter("aid"));
 	    String SongName = request.getParameter("songname");
@@ -45,7 +45,11 @@ public class ArtistAddSongController {
 		
 		isTrue = dao.addSong(AId, SongName, Category, Duration);
 		
+		System.out.println("isTrue = " + isTrue);
+		
 		if(isTrue == true) {
+			
+			System.out.println("Hello");
 			
 			RequestDispatcher dis = request.getRequestDispatcher("SongDetails.jsp");
 			
@@ -59,7 +63,6 @@ public class ArtistAddSongController {
 			
 		}
 		
-		return isTrue;
 		
 	}
 	

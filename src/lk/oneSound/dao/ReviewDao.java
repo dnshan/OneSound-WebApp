@@ -1,6 +1,8 @@
 package lk.oneSound.dao;
 
 import java.sql.Connection;
+
+
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -48,12 +50,15 @@ public  boolean addSong( int AId, String songName, String category, String durat
 		
 	}
 
-	public List<Review> getAllSongs() {
+	public List<Review> getAllSongs(String id) {
+		
+		int intId = Integer.parseInt(id);
+		
 		List<Review> songs = new ArrayList<>();
 		
 		 try (Connection con = DBConnection.getConnection();
 	             Statement stmt = con.createStatement();
-	             ResultSet rs = stmt.executeQuery("SELECT * FROM review")) {
+	             ResultSet rs = stmt.executeQuery("SELECT * FROM review where AId = '"+intId+"'")) {
 
 	            while (rs.next()) {
 	                int ReviewId = rs.getInt("ReviewId");

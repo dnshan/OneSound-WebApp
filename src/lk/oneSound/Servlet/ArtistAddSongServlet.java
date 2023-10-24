@@ -33,5 +33,12 @@ public class ArtistAddSongServlet extends HttpServlet {
 		this.controller = new ArtistAddSongController(request, response);
 		this.controller.addSong();
 	}
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		this.controller = new ArtistAddSongController(request, response);
+		this.controller.addSong();
+	}
 
 }

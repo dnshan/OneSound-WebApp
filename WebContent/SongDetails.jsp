@@ -279,11 +279,11 @@
        
        			<table>
 
-	<c:forEach var="song" items="${songs.songs}">
+	<c:forEach var="song" items="${songs}">
 	
 	<tr>
 	<td>Review ID : </td>
-	<td>$song.getreviewId()}</td>
+	<td>$song.reviewId)}</td>
 	</tr>
 	<tr>
 	<td>Artist ID :</td>

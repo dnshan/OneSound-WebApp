@@ -19,12 +19,12 @@ public class ArtistReadSongController {
 
     public void getAndSetSongs() {
         ReviewDao reviewDao = new ReviewDao();
-        List<Review> songs = reviewDao.getAllSongs();
+        List<Review> songs = reviewDao.getAllSongs(null);
         // Set the list of songs as an attribute in the request object
         request.setAttribute("songs", songs);
 
         // Forward the request to the JSP page where you want to display the songs
-        // For example, assuming your JSP page is named "songs.jsp"
+   
         try {
             request.getRequestDispatcher("SongDetails.jsp").forward(request, response);
         } catch (Exception e) {
