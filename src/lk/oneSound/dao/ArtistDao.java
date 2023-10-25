@@ -5,9 +5,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import lk.oneSound.Interface.IArtist;
 import lk.oneSound.Model.Artist;
+import lk.oneSound.Model.Customer;
 import lk.oneSound.Utility.DBConnection;
 
 public class ArtistDao implements IArtist{
@@ -85,6 +87,84 @@ public class ArtistDao implements IArtist{
 
 	}
 	
+	public boolean UpdateArtist(String id, String firstname, String lastname, String email,String companyname, String username) {
+		boolean isSuccess = false;
+		
+		try {
+			
+			Connection con = DBConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "UPDATE artist SET FirstName = '"+firstname+"', LastName = '"+lastname+"', Email = '"+email+"',CompanyName ='"+companyname+"', Username = '"+username+"' WHERE ArtistId = '"+id+"' ";
+			int result = stmt.executeUpdate(sql);
+
+			if (result > 0) {
+
+				isSuccess = true;
+			}
+
+			else {
+				isSuccess = false;
+
+			}
+			
+			
+			
+			
+		}
+		
+		catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+		return isSuccess;
+	}
+	
+	
+	public List<Artist> getArtistDetails(String id){
+		
+		int intId = Integer.parseInt(id);
+		
+		ArrayList<Artist> artist = new ArrayList<>();
+		
+		try {
+
+			Connection con = DBConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "SELECT * FROM artist WHERE ArtistId = '"+intId+"'";
+			ResultSet result = stmt.executeQuery(sql);
+			
+			while(result.next()) {
+				
+				int uid = result.getInt(1);
+				String fname = result.getString(2);
+				String lname = result.getString(3);
+				String email = result.getString(4);
+				String companyname = result.getString(5);
+				String uname = result.getString(6);
+				String pass = result.getString(7);
+				
+				Artist ar = new Artist(uid,fname,lname,email,companyname,uname,pass);
+				
+				artist.add(ar);
+				
+				
+			}
+			
+			
+			
+		}
+		
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return artist;
+		
+		
+		
+	}
 	
 
 }

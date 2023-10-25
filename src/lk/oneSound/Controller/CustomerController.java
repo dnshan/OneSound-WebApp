@@ -67,7 +67,7 @@ public class CustomerController {
 		else if (artistDetails != null && !artistDetails.isEmpty()) {
 			
 			 request.setAttribute("artistDetails", artistDetails);
-	         RequestDispatcher dispatcher = request.getRequestDispatcher("loggedHome.jsp");
+	         RequestDispatcher dispatcher = request.getRequestDispatcher("ArtistAccount.jsp");
 	         dispatcher.forward(request, response);
 			
 			

@@ -74,6 +74,16 @@
   	<servlet-name>SignUpArtist</servlet-name>
   	<url-pattern>/signupartist</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>UpdateArtist</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.ArtistUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateArtist</servlet-name>
+  	<url-pattern>/artistupdate</url-pattern>
+  </servlet-mapping>
+  
 
 
 </web-app>
