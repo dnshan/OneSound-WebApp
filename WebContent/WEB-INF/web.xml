@@ -29,6 +29,24 @@
   	<url-pattern>/signup</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>UpdateCustomer</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.UpdateCustomerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateCustomer</servlet-name>
+  	<url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DeleteCustomer</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.DeleteCustomerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeleteCustomer</servlet-name>
+  	<url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  
   	  	 <servlet>
   	<servlet-name>AddSong</servlet-name>
   	<servlet-class>lk.oneSound.Servlet.ArtistAddSongServlet</servlet-class>
@@ -47,6 +65,15 @@
     <servlet-name>ReadSong</servlet-name>
     <url-pattern>/ReadSong</url-pattern>
 </servlet-mapping>
+
+ <servlet>
+  	<servlet-name>SignUpArtist</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.ArtistSignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SignUpArtist</servlet-name>
+  	<url-pattern>/signupartist</url-pattern>
+  </servlet-mapping>
 
 
 </web-app>

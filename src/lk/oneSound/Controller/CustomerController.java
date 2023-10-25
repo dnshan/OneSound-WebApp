@@ -11,7 +11,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import lk.oneSound.Model.Artist;
 import lk.oneSound.Model.Customer;
+import lk.oneSound.dao.ArtistDao;
 import lk.oneSound.dao.customerDao;
 
 
@@ -21,6 +23,7 @@ public class CustomerController {
 	HttpServletResponse response;
 	RequestDispatcher dispatcher;
 	customerDao dao;
+	ArtistDao artistdao;
 //	ICustomer iCustomer;
 	
 	public CustomerController() {
@@ -31,6 +34,7 @@ public class CustomerController {
 		this.request = request;
 		this.response = response;
 		this.dao = new customerDao();
+		this.artistdao = new ArtistDao();
 //		this.iCustomer = iCustomer;
 		//this.dispatcher = request.getRequestDispatcher("loggedHome.jsp");
 	}
@@ -47,7 +51,7 @@ public class CustomerController {
 		
 		try {
 		ArrayList<Customer> userDetails = dao.validate(username, password);
-		//request.setAttribute("userDetails", userDetails);
+		ArrayList<Artist>artistDetails = artistdao.validate(username, password);
 		
 		
 		if (userDetails != null && !userDetails.isEmpty()) {
@@ -58,7 +62,20 @@ public class CustomerController {
             dispatcher.forward(request, response);
         
 		
-		} else {
+		} 
+		
+		else if (artistDetails != null && !artistDetails.isEmpty()) {
+			
+			 request.setAttribute("artistDetails", artistDetails);
+	         RequestDispatcher dispatcher = request.getRequestDispatcher("loggedHome.jsp");
+	         dispatcher.forward(request, response);
+			
+			
+		}
+		
+		
+		
+		else {
             // Authentication failed
 			//out.println("<script type='text/javascript'>");
 			//out.println("alert('Your username or password is incorrect');");

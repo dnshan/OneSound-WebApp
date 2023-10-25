@@ -272,6 +272,8 @@
     <!-- ##### Buy Now Area Start ##### -->
     <section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100" style="background-color:aliceblue;">
         <!-- <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label> -->
+       <h1>Update Account</h1>
+       
        <%
       		String userid = request.getParameter("userid");
        		String firstname = request.getParameter("firstname");

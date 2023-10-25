@@ -136,7 +136,7 @@
                         <h3>Welcome to the ONE SOUND....</h3>
                         <!-- SignUp Form -->
                         <div class="login-form">
-                            <form action="artistSignUp" method="post">
+                            <form action="signupartist" method="post">
                                 <div class="form-group">
                                     <label for="firstname">First Name</label>
                                     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex : Dinusha " name  = "artistFirstName" required>

@@ -11,9 +11,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>One Sound - Login</title>
-
-
+    <title>One Sound -To Sign up</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -97,14 +95,14 @@
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul> -->
 
-                                <!-- Login/Register & Cart Button -->
+                                <!-- Login/Register & Cart Button 
                                 <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Login/Register -->
+                                    Login/Register 
                                     <div class="login-register-btn mr-50">
-                                        <a href="SignUpRedirect.jsp" id="loginBtn">Sign Up</a>
+                                        <a href="signUp.html" id="loginBtn">Sign Up</a>
                                     </div>
 
-                                    <!-- Cart Button -->
+                                     Cart Button -->
                                     <!-- <div class="cart-btn">
                                         <p><span class="icon-shopping-cart"></span> <span class="quantity">1</span></p>
                                     </div>
@@ -121,10 +119,10 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb2.jpg);">
         <div class="bradcumbContent">
             <p>See what’s new</p>
-            <h2>Login</h2>
+            <h2>Select Account Type</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
@@ -135,29 +133,112 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
                     <div class="login-content">
-                        <h3>Welcome Back</h3>
+                        <h3>Welcome </h3>
                         <!-- Login Form -->
-                        <div class="login-form">
-                            <form action="log" method="get">
+
+
+                        <div class="oneMusic-buttons-area mb-100">
+                            <a href="UserSignup.jsp" class="btn oneMusic-btn m-2">Customer <i class="fa fa-angle-double-right"></i></a>
+                            <a href="ArtistSignUp.jsp" class="btn oneMusic-btn btn-2 m-2">Artist <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+
+                        <!-- <div class="login-form">
+                            <form action="#" method="post">
                                 <div class="form-group">
                                     <label for="firstname">Username</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Username" name = "uid">
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Username">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name = "pass">
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                 </div>
-                                
-                                
-                                <button type="submit" class="btn oneMusic-btn mt-30" name = "login" >Login</button>
+                                <button type="submit" class="btn oneMusic-btn mt-30">Login</button>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- ##### Login Area End ##### -->
+
+
+
+                <!-- ========== Milestones ========== -->
+                <!-- <div class="col-12">
+                    <div class="elements-title mb-70">
+                        <h2>Milestone</h2>
+                    </div>
+                </div> -->
+
+                <div class="col-12">
+                    <div class="oneMusic-cool-facts-area">
+                        <div class="row">
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-text">
+                                        <h2>+<span class="counter">1000</span></h2>
+                                        <p>Live Concerts</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-text">
+                                        <h2><span class="counter">19</span>k</h2>
+                                        <p>Followers on FB</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-text">
+                                        <h2><span class="counter">732</span></h2>
+                                        <p>New Artists</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-text">
+                                        <h2><span class="counter">25</span>mil</h2>
+                                        <p>Songs in Playlist</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-text">
+                                        <h2><span class="counter">2401</span></h2>
+                                        <p>New Songs</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Cool Facts -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <div class="single-cool-fact mb-100">
+                                    <div class="scf-text">
+                                        <h2><span class="counter">28</span></h2>
+                                        <p>Awards Won</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
@@ -198,10 +279,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Active js -->
     <script src="js/active.js"></script>
 </body>
-<!-- edited  -->
-<!-- comment -->
-
-
-
 
 </html>
