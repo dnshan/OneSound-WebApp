@@ -54,6 +54,7 @@ public class ArtistDao implements IArtist{
 		return artist;
 	}
 
+	//Insert Artist 
 	public boolean insertArtist(String firstName, String lastName, String email, String companyName, String username,
 			String password) {
 		boolean isSuccess = false;
@@ -86,6 +87,8 @@ public class ArtistDao implements IArtist{
 		return isSuccess;
 
 	}
+	
+	//Update Artist Details
 	
 	public boolean UpdateArtist(String id, String firstname, String lastname, String email,String companyname, String username) {
 		boolean isSuccess = false;
@@ -120,7 +123,7 @@ public class ArtistDao implements IArtist{
 		return isSuccess;
 	}
 	
-	
+	//Retrieve Artist Details
 	public List<Artist> getArtistDetails(String id){
 		
 		int intId = Integer.parseInt(id);
@@ -165,6 +168,45 @@ public class ArtistDao implements IArtist{
 		
 		
 	}
+	//Delete Artist Account
 	
+	public boolean DeleteArtist(String id) {
+		
+		boolean isSuccess = false;
+		
+		int intId = Integer.parseInt(id);
+		
+		try {
+			
+			Connection con = DBConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "DELETE FROM artist WHERE ArtistId = '"+intId+"'";
+			int result = stmt.executeUpdate(sql);
+			
+			if(result > 0) {
+
+				isSuccess = true;
+			}
+
+			else {
+				isSuccess = false;
+
+			}
+			
+			
+			
+			
+			
+		}
+		catch(Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+		
+	}
+	
+
 
 }

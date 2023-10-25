@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,14 +61,14 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="loggedHome.html">Home</a></li>
+                                    <li><a href="loggedHome.jsp">Home</a></li>
                                     <li><a href="albums-store.html">Albums</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                     <li><a href="#">Profile</a>
                                         <ul class="dropdown">
-                                            <li><a href="overview.html">Overview</a></li>
-                                            <li><a href="Editprofile.html">Edit Profile</a></li>
-                                            <li><a href="Songsdetails.html">Songs Details</a></li>
+                                            <li><a href="userAccount.jsp">Overview</a></li>
+                                            <li><a href="EditProfile.jsp">Edit Profile</a></li>
+                                            <li><a href="SongDetails.jsp">Songs Details</a></li>
                                             <!-- <li><a href="blog.html">News</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="elements.html">Elements</a></li>
@@ -272,82 +272,66 @@
 
     <!-- ##### Buy Now Area Start ##### -->
     <section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100" style="background-color:aliceblue;">
-        <!--  <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label>-->
-        
-        <table>
-        	<c:forEach var="artistDetails" items="${artistDetails}">
-        	
-        		<c:set  var = "userid" value = "${artistDetails.getArtistId() }"/>
-				<c:set  var = "firstname" value = "${artistDetails.getFirstName()}"/>
-				<c:set  var = "lastname" value = "${artistDetails.getLastName()}"/>
-				<c:set  var = "email" value = "${artistDetails.getEmail()}"/>
-				<c:set  var = "companyname" value = "${artistDetails.getCompanyName()}"/>
-				<c:set  var = "username" value = "${artistDetails.getUsername()}"/>
-        	
-        		<tr>
-					<td>User ID : </td>
-					<td>${artistDetails.getArtistId() }</td>
-					</tr>
-					<tr>
-					<td>First Name :</td>
-					<td>${artistDetails.getFirstName()}</td>
-					</tr>
-					
-					<tr>
-					<td>Last Name :</td>
-					<td>${artistDetails.getLastName()}</td>
-					</tr>
-					
-					<tr>
-					<td>Email:</td>
-					<td>${artistDetails.getEmail()}</td>
-					</tr>
-					
-					<tr>
-					<td>Company Name:</td>
-					<td>${artistDetails.getCompanyName()}</td>
-					</tr>
-					
-					<tr>
-					<td>Username :</td>
-					<td>${artistDetails.getUsername()}</td>
-					</tr>
-				        	
-        	
-        	
-        	</c:forEach>
-        </table>
-        
-        <c:url value = "EditArtistProfile.jsp" var = "arupdate">
-		<c:param name = "userid" value = "${userid}"/>
-		<c:param name = "firstname" value = "${firstname}"/>
-		<c:param name = "lastname" value = "${lastname}"/>
-		<c:param name = "email" value = "${email}"/>
-		<c:param name = "comapnyname" value = "${companyname}"/>
-		<c:param name = "username" value = "${username}"/>
-	
-	
-	</c:url>
-		<a href = "${arupdate}">
-      <button type="submit" class="btn oneMusic-btn mt-30" name ="update">Update Account</button>
-		</a>	
-		
-		
-		<c:url value = "DeleteArtist.jsp" var = "artistdelete">
-		
-		<c:param name = "userid" value = "${userid}"/>
-		<c:param name = "firstname" value = "${firstname}"/>
-		<c:param name = "lastname" value = "${lastname}"/>
-		<c:param name = "email" value = "${email}"/>
-		<c:param name = "comapnyname" value = "${companyname}"/>
-		<c:param name = "username" value = "${username}"/>
-	
-	
-	</c:url>
-		
-		<a href = "${artistdelete}">
-		<button type="submit" class="btn oneMusic-btn mt-30" name ="delete">Delete Account</button>
-		</a>
+        <!-- <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label> -->
+       <h1>Update Account</h1>
+       
+       <%
+      		String userid = request.getParameter("userid");
+       		String firstname = request.getParameter("firstname");
+       		String lastname = request.getParameter("lastname");
+       		String email = request.getParameter("email");
+       		String companyname = request.getParameter("companyname");
+       		String username = request.getParameter("username");
+       		
+       		
+       %>
+       
+       
+       
+        <div class="login-form">
+                            <form action="deleteartist" method="post">
+                            
+                            	<div class="form-group">
+                                    <label for="firstname">User Id</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "userid2" value = "<%= userid%>" readonly>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "firstname2" value = "<%= firstname%>" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname">Last Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "lastname2" value = "<%= lastname%>" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name = "email2" value = "<%= email%>" readonly>
+                                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="firstname">Company Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "companyname" value = "<%=companyname%>" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="firstname">Username</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"  name = "uid2" value = "<%= username%>" readonly>
+                                </div>
+                                
+                                <!--  <div class="form-group">
+                                    <label for="exampleInputPassword1">Confirm Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Re-enter Password">
+                                </div> -->
+
+                                
+
+                                <button type="submit" class="btn oneMusic-btn mt-30" name ="delete">Delete</button>
+                            </form>
+                        </div>
         <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -578,7 +562,7 @@
     <!-- ##### Buy Now Area End ##### -->
 
     <!-- ##### Featured Artist Area Start ##### -->
-    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-4.jpg);">
+    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/blog2.jpg);">
         <!-- <div class="container">
             <div class="row align-items-end">
                 <div class="col-12 col-md-5 col-lg-4">

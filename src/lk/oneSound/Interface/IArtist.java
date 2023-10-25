@@ -11,4 +11,5 @@ public interface IArtist {
 	boolean insertArtist(String firstName, String lastName, String email, String companyName, String username,String password);
 	public boolean UpdateArtist(String id, String firstname, String lastname, String email,String companyname, String username);
 	public List<Artist> getArtistDetails(String id);
+	public boolean DeleteArtist(String id);
 }
