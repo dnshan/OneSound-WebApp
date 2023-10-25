@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import lk.oneSound.dao.ReviewDao;
-
+import lk.oneSound.Model.Review;
 public class ArtistAddSongController {
 	
 	
@@ -44,13 +44,14 @@ public class ArtistAddSongController {
 		ReviewDao dao = new ReviewDao();
 		
 		isTrue = dao.addSong(AId, SongName, Category, Duration);
-		
+		Review tempR = new Review(1, AId, SongName, Category, Float.parseFloat(Duration));
 		System.out.println("isTrue = " + isTrue);
 		
 		if(isTrue == true) {
 			
 			System.out.println("Hello");
-			
+		
+			this.request.setAttribute("song",tempR);	
 			RequestDispatcher dis = request.getRequestDispatcher("SongDetails.jsp");
 			
 			dis.forward(request, response);
