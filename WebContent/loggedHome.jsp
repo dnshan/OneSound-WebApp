@@ -63,8 +63,8 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="loggedHome.jsp">Home</a></li>
-                                    <li><a href="albums-store.html">Albums</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="Album.jsp">Albums</a></li>
+                                    <li><a href="Contact.jsp">Contact</a></li>
                                     <li><a href="ArtistAddSong.jsp">Add Song</a></li>
                                     <li><a href="#">Profile</a>
                                         <ul class="dropdown">
