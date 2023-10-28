@@ -148,7 +148,7 @@
                                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name = "pass">
                                 </div>
                                 
-                                
+                                <input type="hidden" value="lg" name="page">
                                 <button type="submit" class="btn oneMusic-btn mt-30" name = "login" >Login</button>
                             </form>
                         </div>

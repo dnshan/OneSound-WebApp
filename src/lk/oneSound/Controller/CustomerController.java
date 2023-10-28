@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -46,7 +47,41 @@ public class CustomerController {
 
 		String username = request.getParameter("uid");
 		String password = request.getParameter("pass");
+		String page = request.getParameter("page").toString();
 		
+		System.out.println(page);
+		
+		if(username == null || username.isEmpty()) {
+			System.out.println("Hi");
+			Cookie[] cookies = request.getCookies();
+			
+			if (cookies != null) {
+			    for (Cookie cookie : cookies) {
+			        if (cookie.getName().equals("username")) {
+			            username = cookie.getValue();
+			            System.out.println("username" + username);
+			        } 
+			        
+			        if (cookie.getName().equals("password")) {
+			            password = cookie.getValue();
+			            System.out.println("password" + password);
+			        }
+			    }
+			}
+
+			
+		} else {
+			Cookie usernameCookie = new Cookie("username", username);
+			Cookie passwordCookie = new Cookie("password", password);
+
+			// Set the maximum age for the cookies (in seconds)
+			usernameCookie.setMaxAge(60 * 60 );  // 1 hour
+			passwordCookie.setMaxAge(60 * 60);  // 1 hour
+			
+			// Add the cookies to the response
+    		response.addCookie(usernameCookie);
+    		response.addCookie(passwordCookie);
+		}
 		
 		
 		try {
@@ -57,19 +92,41 @@ public class CustomerController {
 		if (userDetails != null && !userDetails.isEmpty()) {
             // User is authenticated
             request.setAttribute("userDetails", userDetails);
+            
+            if("01".equals(page.trim())) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("userAccount.jsp");
             // Forward to the user's home page
             dispatcher.forward(request, response);
-        
+            }
+            
+            else {
+            	
+            	dispatcher = request.getRequestDispatcher("CustomerLoggedHome.jsp");
+            	// Forward to the logged home page
+                dispatcher.forward(request, response);
+            	
+            	
+            }
 		
 		} 
 		
 		else if (artistDetails != null && !artistDetails.isEmpty()) {
 			
 			 request.setAttribute("artistDetails", artistDetails);
+			 
+			 if("01".equals(page.trim())) {
 	         RequestDispatcher dispatcher = request.getRequestDispatcher("ArtistAccount.jsp");
 	         dispatcher.forward(request, response);
-			
+			 }
+			 
+			 else {
+				 
+				 	dispatcher = request.getRequestDispatcher("loggedHome.jsp");
+	            	// Forward to the logged home page
+	                dispatcher.forward(request, response);
+	            	
+				 
+			 }
 			
 		}
 		

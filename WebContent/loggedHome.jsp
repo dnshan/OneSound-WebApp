@@ -65,6 +65,7 @@
                                     <li><a href="loggedHome.jsp">Home</a></li>
                                     <li><a href="albums-store.html">Albums</a></li>
                                     <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="ArtistAddSong.jsp">Add Song</a></li>
                                     <li><a href="#">Profile</a>
                                         <ul class="dropdown">
                                             <li><a href="userAccount.jsp">Overview</a></li>

@@ -69,7 +69,7 @@
                                         <ul class="dropdown">
                                             <li><a href="userAccount.jsp">Overview</a></li>
                                             <li><a href="EditProfile.jsp">Edit Profile</a></li>
-                                            <li><a href="SongDetails.jsp">Songs Details</a></li>
+                                            <!--  <li><a href="SongDetails.jsp">Songs Details</a></li>-->
                                             <!-- <li><a href="blog.html">News</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="elements.html">Elements</a></li>
@@ -947,6 +947,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </footer>
+    
+    <form action="log" method="get" style="display: none">
+    			<input type="hidden" value="01" name="page" id="page">
+               <button type="submit" class="btn oneMusic-btn mt-30" name = "login" id="getUserDetails">Login</button>
+                            </form>
+                            
+                            <script>
+                            	window.onload =function() {
+                            		if (!localStorage.getItem('buttonClicked')) {
+                                        document.getElementById("getUserDetails").click();
+                                        localStorage.setItem('buttonClicked', 'true');
+                                    } else {
+                                        // Remove the flag when the page is refreshed
+                                        localStorage.removeItem('buttonClicked');
+                                    }
+                            	}
+                            </script>
     <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Script ##### -->
