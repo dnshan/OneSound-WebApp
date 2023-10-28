@@ -137,7 +137,7 @@
                         <h3>Welcome to the ONE SOUND....</h3>
                         <!-- SignUp Form -->
                         <div class="login-form">
-                            <form action="AddSong" method="get">
+                            <form action="AddSong" method="post">
                                 <div class="form-group">
                                     <label for="firstname">Artist ID</label>
                                     <input type="text" class="form-control" id="exampleInputPassword1" name="aid" placeholder="Ex : 123 ">
@@ -179,7 +179,7 @@
                                       <div class="invalid-feedback">You must agree before submitting.</div>
                                     </div>
                                   </div> -->
-
+								<input type="hidden" value="lg" name="page1">
                                 <button type="submit" class="btn oneMusic-btn mt-30">Submit</button>
                             </form>
                         </div>

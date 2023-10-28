@@ -92,6 +92,24 @@
   	<servlet-name>DeleteArtist</servlet-name>
   	<url-pattern>/deleteartist</url-pattern>
   </servlet-mapping>
-
+  
+     <servlet>
+  	<servlet-name>UpdateReview</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.ArtistUpdateSongServlet</servlet-class>
+  </servlet>
+	<servlet-mapping>
+  	<servlet-name>UpdateReview</servlet-name>
+  	<url-pattern>/updatereview</url-pattern>
+  </servlet-mapping>
+  
+  			     <servlet>
+  	<servlet-name>DeleteReview</servlet-name>
+  	<servlet-class>lk.oneSound.Servlet.ArtistDeleteSongServlet</servlet-class>
+  </servlet>
+	<servlet-mapping>
+  	<servlet-name>DeleteReview</servlet-name>
+  	<url-pattern>/deletereview</url-pattern>
+  </servlet-mapping>
+  
 
 </web-app>

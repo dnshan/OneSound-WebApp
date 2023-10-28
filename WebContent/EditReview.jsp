@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -274,84 +273,61 @@
     <!-- ##### Buy Now Area Start ##### -->
     <section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100" style="background-color:aliceblue;">
         <!-- <label for="fullName" class="col-md-4 col-lg-3 col-form-label" style="font-family: Arial, Helvetica, sans-serif;">Full Name</label> -->
+       <h1>Update Review</h1>
+       
+       <%
+      		String reviewid = request.getParameter("Review");
+       		String artistid = request.getParameter("ArtistID");
+       		String songname = request.getParameter("SongName");
+       		String category = request.getParameter("Category");
+       		String duration = request.getParameter("Duration");
+       		
+       		
+       		
+       %>
        
        
-     
-       			<table>
-       			
-       			<c:forEach var="song" items="${songs}">
-       				</c:forEach> 
-       			
-     <c:set  var = "Review" value = "${song.getreviewId()}"/>
-	<c:set  var = "ArtistID" value = "${song.getArtistId()}"/>
-	<c:set  var = "SongName" value = "${song.getsongName()}"/>
-	<c:set  var = "Category" value = "${song.getCategory()}"/>
-	<c:set  var = "Duration" value = "${song.getDuration()}"/>
+       
+        <div class="login-form">
+                            <form action="updatereview" method="post">
+                            
+                            	<div class="form-group">
+                                    <label for="firstname">Review Id</label>
+                                    <input type="text" class="form-control" id="ReviewId"  name = "ReviewId" value = "<%= reviewid%>" readonly>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="firstname">Artist ID</label>
+                                    <input type="text" class="form-control" id="ArtistID"  name = "ArtistID" value = "<%= artistid%>">
+                                </div>
 
-	
-	
-	<tr>
-	<td>Review ID : </td>
-	<td>${song.getreviewId()}</td>
-	</tr>
-	<tr>
-	<td>Artist ID :</td>
-	<td>${song.getArtistId()}</td>
-	</tr>
-	
-	<tr>
-	<td>Song Name:</td>
-	<td>${song.getsongName() }</td>
-	</tr>
-	
-	<tr>
-	<td>Category</td>
-	<td>${song.getCategory()}</td>
-	</tr>
-	
-	<tr>
-	<td>Duration :</td>
-	<td>${song.getDuration()}</td>
-	</tr>
-	
-	
-	
-</table>
+                                <div class="form-group">
+                                    <label for="firstname">Song Name</label>
+                                    <input type="text" class="form-control" id="SongName"  name = "SongName" value = "<%= songname%>">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Category</label>
+                                    <input type="text" class="form-control" id="Category"   name = "Category" value = "<%= category%>">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="firstname">Duration</label>
+                                    <input type="text" class="form-control" id="Duration"  name = "Duration" value = "<%=duration%>">
+                                </div>
+                                
+                              
+                                
+                                <!--  <div class="form-group">
+                                    <label for="exampleInputPassword1">Confirm Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Re-enter Password">
+                                </div> -->
 
-		<c:url value = "EditReview.jsp" var = "revupdate">
-		<c:param name = "Review" value = "${Review}"/>
-		<c:param name = "ArtistID" value = "${ArtistID}"/>
-		<c:param name = "SongName" value = "${SongName}"/>
-		<c:param name = "Category" value = "${Category}"/>
-		<c:param name = "Duration" value = "${Duration}"/>
-	
-	
-	</c:url>
-	
-	
-        <a href = "${revupdate}">
-      <button type="submit" class="btn oneMusic-btn mt-30" name ="update">Update Account</button>
-		</a>	
-		
-		
-		
-		<c:url value = "DeleteReview.jsp" var = "revdelete">
-		<c:param name = "Review" value = "${Review}"/>
-		<c:param name = "ArtistID" value = "${ArtistID}"/>
-		<c:param name = "SongName" value = "${SongName}"/>
-		<c:param name = "Category" value = "${Category}"/>
-		<c:param name = "Duration" value = "${Duration}"/>
-	
-       </c:url>
-       
-       
-       
-       		<a href = "${revdelete}">
-		<button type="submit" class="btn oneMusic-btn mt-30" name ="delete">Delete Account</button>
-		    </a>
-		
-		
-		
+                                
+
+                                <button type="submit" class="btn oneMusic-btn mt-30" name ="submit">Update</button>
+                            </form>
+                        </div>
         <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -582,7 +558,7 @@
     <!-- ##### Buy Now Area End ##### -->
 
     <!-- ##### Featured Artist Area Start ##### -->
-    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/blog3.jpg);">
+    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/blog2.jpg);">
         <!-- <div class="container">
             <div class="row align-items-end">
                 <div class="col-12 col-md-5 col-lg-4">
