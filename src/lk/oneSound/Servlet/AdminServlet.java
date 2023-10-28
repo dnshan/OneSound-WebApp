@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import lk.oneSound.Model.Admin;
 import lk.oneSound.dao.AdminDAO;
 
-@WebServlet("/")
+@WebServlet("/AdminServlet")
 public class AdminServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private AdminDAO adminDAO;
