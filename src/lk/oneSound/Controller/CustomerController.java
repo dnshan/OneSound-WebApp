@@ -132,6 +132,7 @@ public class CustomerController {
 		
 		
 		
+		
 		else {
             // Authentication failed
 			//out.println("<script type='text/javascript'>");
