@@ -2,6 +2,9 @@ package lk.oneSound.Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -49,17 +52,20 @@ public class ArtistAddSongController {
 		ReviewDao dao = new ReviewDao();
 		
 		isTrue = dao.addSong(AId, SongName, Category, Duration);
-		Review songs = new Review(1, AId, SongName, Category, Float.parseFloat(Duration));
+		//Review songs = new Review(0, AId, SongName, Category, Float.parseFloat(Duration));
 		//System.out.println("isTrue = " + isTrue);
 		
 		if(isTrue == true) {
-			
+			 List<Review> songs = dao.getAllSongs(String.valueOf(AId));
 			//System.out.println("Hello");
-		
-			this.request.setAttribute("song",songs);	
+			
+			if(songs != null && !songs.isEmpty()) {
+			Review song = songs.get(0);
+			this.request.setAttribute("songs",songs);	
 			RequestDispatcher dis = request.getRequestDispatcher("SongDetails.jsp");
 			
 			dis.forward(request, response);
+			}
 			
 		}
 		

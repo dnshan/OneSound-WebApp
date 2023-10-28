@@ -25,7 +25,7 @@ public  boolean addSong( int AId, String songName, String category, String durat
 			
 			Connection con = DBConnection.getConnection();
 			Statement stmt = con.createStatement();
-			String sql = "INSERT INTO review VALUES (0, '"+AId+"', '"+songName+"', '"+category+"', '"+duration+"') ";
+			String sql = "INSERT INTO review VALUES (0,'"+AId+"', '"+songName+"', '"+category+"', '"+duration+"') ";
 			int result = stmt.executeUpdate(sql);
 			
 			
@@ -52,9 +52,9 @@ public  boolean addSong( int AId, String songName, String category, String durat
 	}
 
 	//read from review table
-	public List<Review> getAllSongs(String AId) {
+	public List<Review> getAllSongs(String aId) {
 		
-		int intAId = Integer.parseInt(AId);
+		int intAId = Integer.parseInt(aId);
 		
 		ArrayList<Review> songs = new ArrayList<>();
 		
@@ -70,6 +70,7 @@ public  boolean addSong( int AId, String songName, String category, String durat
 	                float duration = rs.getFloat("Duration");
 
 	                Review song = new Review(ReviewId, artistId, songName, category, duration);
+	               // System.out.println(song);
 	                songs.add(song);
 	            }
 
@@ -78,6 +79,7 @@ public  boolean addSong( int AId, String songName, String category, String durat
 	        }
 
 	        return songs;
+	        
 	
 	}
 	
@@ -104,7 +106,7 @@ public  boolean addSong( int AId, String songName, String category, String durat
 			String sql = "UPDATE review SET SongName = '"+songName+"', Category = '"+category+"', Duration = "+floatduration+" WHERE ReviewId = "+intreviewid+" ";
 			int result = stmt.executeUpdate(sql);
 
-			System.out.println(sql);	
+			//System.out.println(sql);	
 			
 			System.out.println("result " + result);		
 
