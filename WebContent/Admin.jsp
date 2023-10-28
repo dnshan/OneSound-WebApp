@@ -1,8 +1,9 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- if the css does not work suddenly -->
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -16,21 +17,15 @@
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="Admin.css">
+    <!--  Stylesheet  -->
+<link rel="stylesheet" href="style.css">
+
+  
 
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+ 
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
@@ -121,7 +116,7 @@
     <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb2.jpg);">
         <div class="bradcumbContent">
-            <p>See what’s new</p>
+           
             <h2>Admin Portal</h2>
         </div>
     </div>
@@ -145,35 +140,53 @@
                     }
                 </style>
 
--->
-
 
 
 
                 <!-- ========== Buttons ========== -->
-                <div class="col-12">
-                    <div class="elements-title mb-70">
-                        
-                    </div>
-                    <div class="adminchange">
-                        <table style="border-collapse: collapse; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th>SongImage</th>
-                                    <th>Song Added</th>
-                                    <th>Song ID</th>
-                                </tr>
-                            </thead>
-                        </table>
-  <div class="oneMusic-buttons-area mb-100">
-                        <a href="#" class="btn oneMusic-btn m-2">Delete Added Song <i class="fa fa-angle-double-right"></i></a>
-                      
-                        <a href="#" class="btn oneMusic-btn btn-2 m-2">Add New Song <i class="fa fa-angle-double-right"></i></a>
-                        <a href="#" class="btn oneMusic-btn btn-2 m-2">Update Sing Details <i class="fa fa-angle-double-right"></i></a>
-                    </div>
+               <div class="col-12">
+    <div class="elements-title mb-70">
+        <!-- Heading for the table -->
+    </div>
+       <a href="/OneSound/AdminaddSong.jsp" class="btn oneMusic-btn m-2">Add Song</a>
+    <div class="adminchange">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th>ArtistId</th>
+                    <th>Song Name</th>
+                    <th>Duration</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            
+            
+            
+            
+            <tbody>
+                <!-- Iterate through the list of songs -->
+                <c:forEach var="song" items="${listSongs}">
+                    <tr>
+                        <td><c:out value="${song.artistid}" /></td>
+                        <td><c:out value="${song.songname}" /></td>
+                        <td><c:out value="${song.duration}" /></td>
+                        <td><c:out value="${song.category}" /></td>
+                        <td>
+                            <!-- Style the "Edit" and "Delete" buttons with CSS classes -->
+                            <a href="AdminServlet/edit?artistid=<c:out value='${song.artistid}' />" class="btn oneMusic-btn btn-2 m-2">Edit</a>
+                            <a href="AdminServlet/delete?artistid=<c:out value='${song.artistid}' />" class="btn oneMusic-btn m-2">Delete</a>
+                         
+                        </td>
+                    </tr>
+                </c:forEach>
                 
-                </div>
-            </div>
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+
 
 
 
