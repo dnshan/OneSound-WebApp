@@ -106,19 +106,17 @@ public  boolean addSong( int AId, String songName, String category, String durat
 			String sql = "UPDATE review SET SongName = '"+songName+"', Category = '"+category+"', Duration = "+floatduration+" WHERE ReviewId = "+intreviewid+" ";
 			int result = stmt.executeUpdate(sql);
 
-			//System.out.println(sql);	
 			
 			System.out.println("result " + result);		
 
 			if (result > 0) {
-				System.out.println("hh 5");		
 
 				isSuccess = true;
 			}
 
 			else {
 				isSuccess = false;
-				System.out.println("hh 6");		
+					
 
 
 			}

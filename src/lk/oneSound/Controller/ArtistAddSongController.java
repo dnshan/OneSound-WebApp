@@ -57,7 +57,6 @@ public class ArtistAddSongController {
 		
 		if(isTrue == true) {
 			 List<Review> songs = dao.getAllSongs(String.valueOf(AId));
-			//System.out.println("Hello");
 			
 			if(songs != null && !songs.isEmpty()) {
 			Review song = songs.get(0);
