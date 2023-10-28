@@ -1,0 +1,29 @@
+-----IT22906526 - NADEESHAN I A D D------
+
+1.Add a Song for Review (Insert)
+2.Read added Song (Read)
+3.Update Song (Update)
+4.Delete Song (Delete)
+
+
+-----IT22341068 - Premasinghe P.K.D.M------
+
+1.Login for multiple user roles
+2.Customer SignUp (Insert)
+3.Read Customer Details (Read)
+4.Update Customer Details (Update)
+5.Delete Customer Account (Delete)
+6.Artist SignUp (Insert)
+7.Read Artist Details (Read)
+8.Update Artist Details (Update)
+9.Delete Artist Account (Delete)
+
+
+-----IT22332080 - Obeyesekere A.D------
+
+1.Add reviewed Song (Insert)
+2.Display Added Song (Read)
+3.Update Added Song (Update)
+4.Delete Added Song (Delete)
+
+
